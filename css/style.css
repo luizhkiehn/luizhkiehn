@@ -1,0 +1,177 @@
+
+.meu-grid > .ui-block-a,
+.meu-grid > .ui-block-b,
+.meu-grid > .ui-block-c {
+	width: 100%;
+}
+
+#header {
+	text-align: center;
+}
+
+#header #logo {
+	height: 60px;
+	margin-left: 0px;
+}
+
+#header #title {
+	display: block;
+	font-family: verdana;
+	font-weight: bold;
+	margin-top: 25px;
+}
+
+#btnMenu {
+	width: 40px;
+	height: 40px;
+	font-size: 32px;
+	margin: 10px 10px 0 0;
+	cursor: pointer;
+}
+
+#conteudo {
+	text-align: center;
+}
+
+#cadastro {
+	margin: 20px 0 0 0;
+	padding: 10px 15px;
+	width: 90%;
+	text-align: left;
+}
+
+#cadastro label {
+	margin-top: 15px;
+}
+
+#cadastro label:FIRST-CHILD {
+	margin-top: 0px;
+}
+
+.produto {
+	width: 250px;
+	/* border: 1px red solid; */
+	border: 1px transparent solid;
+	text-align: center;
+	display: inline-block;
+	margin: 20px 25px;
+}
+
+.produto:hover {
+	border: 1px #a5a5a5 solid;
+	border-radius: 8px;
+}
+
+.produto .nome {
+/* 	border: 1px red solid;
+ */	font-size: 16px;
+	font-weight: bold;
+	margin: 5px 0px 0px 0px;
+}
+
+.produto .foto {
+/* 	border: 1px red solid;
+ */	max-width: 200px;
+	max-height: 200px;
+	display: block;
+	margin: 5px 0px 5px 25px;
+}
+
+.produto .de {
+/* 	border: 1px red solid;
+ */	display: block;
+	font-size: 14px;
+	text-decoration: line-through;
+}
+
+.produto .por {
+/* 	border: 1px red solid;
+ */	display: block;
+	font-size: 18px;
+	margin-bottom: 3px;
+}
+
+
+#galeria .item {
+	width: 200px;
+	border: 1px transparent solid;
+/* 	border: 1px red solid;
+ */	text-align: center;
+	display: inline-block;
+	margin: 20px 25px;
+}
+
+#galeria .item .foto {
+/* 	border: 1px red solid;
+ */	max-width: 200px;
+	display: block;
+	margin: 0px;
+}
+
+#galeria .item .comentario {
+/* 	border: 1px red solid;
+ */	font-family: "Verdana", "Times new Roman", "Liberation Serif";
+	font-size: 16px;
+	margin: 0px 0px 0px 0px;
+}
+
+
+#footer h1,
+#footer h2 {
+	padding: 0px;
+	margin: 0px;
+}
+
+
+@media screen and (max-width: 719px) {
+	#principal {
+		padding: 0px;
+	}
+	
+	#menu ul {
+		margin-top: 0px;
+	}
+	
+	#menu ul li.divisor {
+		display: none;
+	}
+}
+
+
+@media screen and (min-width: 720px) {
+	.meu-grid > .ui-block-a {
+		width: 20%;
+	}
+	
+	
+	.meu-grid > .ui-block-b {
+		width: 80%;
+		padding: 0px 15px;
+	}
+	
+	#header #logo {
+		height: 90px;
+	}
+	
+	#header #title {
+		display: block;
+		font-size: 32px;
+	}
+	
+	#menu {
+		display: block;
+	}
+	
+	#btnMenu {
+		display: none;
+	}
+
+	#cadastro {
+		width: 300px;
+	}
+
+	footer {
+		margin-top: 20px;
+		padding: 30px 10px;
+	}
+}

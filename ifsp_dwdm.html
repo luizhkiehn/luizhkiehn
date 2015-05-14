@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><base href="."> 
+  	 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+    <title>Loja Virtual</title>
+    
+    <!-- Latest compiled and minified CSS -->
+ 	<script type="text/javascript" src="ifsp_dwdm_files/jquery-1.11.2.min.js"></script>
+ 	
+ 	<link rel="stylesheet" href="css/bootstrap.min.css">
+ 	<script type="text/javascript" src="ifsp_dwdm_files/bootstrap.min.js"></script>
+ 	
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+ 	<script type="text/javascript" src="ifsp_dwdm_files/jquery.mobile-1.4.5.min.js"></script>
+ 	
+	<link rel="stylesheet" href="css/style.css">
+</head> 
+<body class="ui-mobile-viewport ui-overlay-a">
+	
+	<!-- Página -->
+	<div data-role="page" id="pagina" data-url="pagina" tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
+	
+		<header id="header" data-role="header" role="banner" class="ui-header ui-bar-inherit">
+			<img class="pull-left" id="logo" src="logo.png" alt="logo">
+			<span id="btnMenu" class="glyphicon glyphicon-menu-hamburger pull-right" aria-hidden="true"></span>
+			<span id="title">LOJA VIRTUAL</span>
+			<br style="clear:both;">
+		</header>
+		
+		<article id="principal" data-role="main" class="ui-content">
+			<div class="ui-grid-a meu-grid">
+			
+				<nav class="ui-block-a" id="menu" style="display: block;">
+					<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+						<li class="divisor ui-li-divider ui-bar-inherit ui-first-child" data-role="list-divider" role="heading">MENU</li>
+						<li><a href="ifsp_dwdm.html" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Produtos</a></li>
+						<li><a href="galeria.html" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Quem já comprou</a></li>
+						<li class="ui-last-child"><a href="cadastro.html" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Cadastre-se</a></li>
+					</ul>
+				</nav>
+				
+				<div class="ui-block-b" id="conteudo">
+					
+					<div id="carregando" class="produto" style="display: none;">
+						<img src="ajax-loader.gif">
+					</div>
+					
+					<script type="text/javascript">
+						// Carrega os produtos via AJAX
+						$(document).ready(function(){
+							$.ajax({
+								url: 'ajax.php',
+								dataType: 'json',
+								method: 'GET',
+								success: function(produtos){
+									$("#carregando").hide();
+									for (x in produtos) {
+										$("#conteudo").append(
+												$('<div>', {
+													'class' : 'produto',
+													html: [
+													       $('<h2>', {'class': 'nome', text: produtos[x].nome }),
+													       $('<img>', {'class': 'foto', src: produtos[x].img }),
+													       $('<span>', {'class': 'de text-muted', text: produtos[x].de }),
+													       $('<span>', {'class': 'por text-success', text: produtos[x].por }),
+													]
+												})
+										);
+									}
+								},
+								error: function(){
+									alert("Ocorreu um erro ao carregar a lista de produtos. Por favor, tente novamente.");
+								}
+							});
+						});
+					</script>
+
+				<div class="produto"><h2 class="nome">TV LED 42" LG</h2><img class="foto" src="./ifsp_dwdm_files/tv.jpg"><span class="de text-muted">de R$ 1599,99</span><span class="por text-success">por R$ 1598,99</span></div><div class="produto"><h2 class="nome">XBOX One</h2><img class="foto" src="./ifsp_dwdm_files/xbox-one.jpg"><span class="de text-muted">de R$ 1400,90</span><span class="por text-success">por R$ 1290,90</span></div><div class="produto"><h2 class="nome">Tablet Samsung 3G cartão de memória 8GB  tela 10"</h2><img class="foto" src="./ifsp_dwdm_files/tablet.jpg"><span class="de text-muted">de R$ 999,99</span><span class="por text-success">por R$ 500,00</span></div><div class="produto"><h2 class="nome">Notebook Windows 8 HD 1TB 4Gb RAM intel i7</h2><img class="foto" src="./ifsp_dwdm_files/notebook.jpg"><span class="de text-muted">de R$ 800,00</span><span class="por text-success">por R$ 699,90</span></div><div class="produto"><h2 class="nome">Monitor LCD 19" 2x HDMI</h2><img class="foto" src="./ifsp_dwdm_files/monitor.jpg"><span class="de text-muted">de R$ 800,99</span><span class="por text-success">por R$ 750,90</span></div><div class="produto"><h2 class="nome">iPhone 6 32GB</h2><img class="foto" src="./ifsp_dwdm_files/iphone.jpg"><span class="de text-muted">de R$ 2200,00</span><span class="por text-success">por R$ 2600,00</span></div></div>
+				
+			</div>
+		</article>
+		
+		<footer id="footer" data-role="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
+			<h1 class="ui-title" role="heading" aria-level="1">João Electro ©</h1>
+			<h2 class="ui-title" role="heading" aria-level="1">Comércio eletrônico de coisas ltda.</h2>
+		</footer>
+	</div>
+	
+	
+	<script type="text/javascript">
+		$("#btnMenu").click(function(){
+			$("#menu").slideToggle();
+		});
+		
+		$(window).resize(function(){
+			if ( $(window).width() > 720 ) {
+				$("#menu").css('display', 'block');
+			} else {
+				$("#menu").css('display', 'none');
+			}
+		});
+		
+		$(document).ready(function(){
+			if ( $(window).width() > 720 ) {
+				$("#menu").css('display', 'block');
+			} else {
+				$("#menu").css('display', 'none');
+			}
+		});
+	</script>
+
+ 
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>
