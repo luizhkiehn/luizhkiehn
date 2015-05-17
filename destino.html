@@ -19,21 +19,6 @@
 
 		<link rel="stylesheet" href="css/estilo.css">
 
-		<script type="text/javascript">
-
-			$(document).ready(function(){$("#reserva").hide()});
-
-			function funcDestinos() {
-				$("#reserva").hide();
-				$("#destinos").show();
-			};
-
-			function funcReserva() {
-				$("#destinos").hide();
-				$("#reserva").show();
-			};
-
-			</script>
 	</head>
 
 	<body class="ui-mobile-viewport ui-overlay-a">
@@ -41,29 +26,24 @@
 		<div data-role="page" id="pagina" data-url="pagina" tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
 	
 			<header id="header" data-role="header" role="banner" class="ui-header ui-bar-inherit">
-				<span id="titulo">TURISMO DE RISCO</span>
+				<span id="title">TURISMO DE RISCO</span>
 				<!-- <br style="clear:both;"> -->
 			</header>
 		
 			<article id="principal" data-role="main" class="ui-content">
-				<div class="ui-grid-a main-grid" style="background-color: #AABBAA;">
+				<div class="ui-grid-a meu-grid">
 			
-					<nav class="ui-block-a" id="menu" style="display: block; padding: 10px;">
+					<nav class="ui-block-a" id="menu" style="display: block;">
 						<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
-							<li class="divisor ui-li-divider ui-bar-inherit ui-first-child" data-role="list-divider" role="heading">Por sua conta e risco</li>
-							<li><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" onClick="funcDestinos();">Destinos</a></li>
-							<li class="ui-last-child"><a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" onClick="funcReserva();">Reservas</a></li>
+							<li class="divisor ui-li-divider ui-bar-inherit ui-first-child" data-role="list-divider" role="heading">O risco é todo seu</li>
+							<li><a href="ifsp_dwdm.html" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Destinos</a></li>
+							<li class="ui-last-child"><a href="reservas.html" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Reservas</a></li>
 						</ul>
 					</nav>
 
 					<div class="ui-block-b" id="conteudo">
 
-						<!-------------->
-						<!-- DESTINOS -->
-						<!-------------->
-						<div id="destinos">
-
-							<h2>DESTINOS</h2>
+						<div id="galeria">
 
 							<div class="local">
 								<img class="imagem" src="img/BoilingLake1.jpg" alt="Lago em Ebulição" />
@@ -140,45 +120,11 @@
 								<p class="descricao">Tsingy de Bemaraha - Madagáscar: Floresta de pedra</p>
 							</div>
 
-						</div>
-
-						<!----------------------->
-						<!-- RESERVA DE VIAGEM -->
-						<!----------------------->
-						<!-- <div id="reserva" style="max-width: 410px; padding-left: 10px;"> -->
-						<div id="reserva">
-
-							<h2>RESERVA DE VIAGEM</h2>
-
-							<form id="cadastro" method="post" action="#">
-								<label for="nome">Nome:</label>
-								<input type="text" name="nome" id="nome" required="true" placeholder="Nome completo" />
-
-								<label for="sexo">Sexo:</label>
-								<fieldset id="sexo" data-role="controlgroup" data-type="horizontal" data-mini="true">
-									<input type="radio" name="radio-choice-b" id="radio-choice-c" value="list" checked="checked">
-									<label for="radio-choice-c">Masculino</label>
-									<input type="radio" name="radio-choice-b" id="radio-choice-d" value="grid">
-									<label for="radio-choice-d">Feminino</label>
-								</fieldset>
-
-								<label for="localdestino">Destino:</label>
-								<input type="text" name="localdestino" id="localdestino" required="true" placeholder="Local de destino" />
-
-								<label for="planosaude">Plano de saúde:</label>
-								<input type="text" name="planosaude" id="planosaude" required="true" placeholder="Plano de Saúde" />
-
-								<label for="apolice">Apólice de seguro:</label>
-								<input type="text" name="apolice" id="apolice" required="true" placeholder="Apólice de seguro" />
-
-								<button type="submit" style="width:auto;"
-										class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-check">Reservar
-								</button>
-							</form>
 
 						</div>
 
 					</div>
+				
 
 				</div>
 
